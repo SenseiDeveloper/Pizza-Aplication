@@ -1,1 +1,25 @@
+@import "~bootstrap-4-grid/scss/grid";
 
+h1,h2,h3,h4,h5{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+p{
+  font-family: 'Roboto',sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+section{
+  background-color: #f8f8f8;
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px;
+
+  h3{
+    font-size: 18px;
+  }
+  p{
+    font-size: 16px;
+  }
+}
