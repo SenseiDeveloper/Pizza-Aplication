@@ -1,6 +1,11 @@
 # Pizza Aplication
 
 ##Start project:
-### `- npm start`
+### `start app`
+    `-npm start`
+### `start server`
+    cd server
+     -node server
+
 
 - base use scss
