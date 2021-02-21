@@ -1,19 +1,18 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import '../componentPizzaConstructor/PizzaConstructor.scss';
 import pizza from '../../image/pizza/pizza.svg';
 import {PizzaOption} from '../componentPizzaConstructor/componentPizzaOption/PizzaOption';
 import {PizzaOrder} from '../componentPizzaConstructor/componentPizzaOrder/PizzaOrder';
 import {PizzaOrderInvoice} from '../componentPizzaConstructor/componentPizzaOrderInvoice/PizzaOrderInvoice';
-import {getProductsForPizza} from "../../api/products";
+import {useDispatch, useSelector} from "react-redux";
+import actions from '../../redux/actions/index';
 
 export const PizzaConstructor = () => {
-
-    const [stateProducts, setStateProducts] = useState({});
+    const dispatch = useDispatch();
+    const storeProducts = useSelector( state => state.products);
 
     useEffect(() => {
-        getProductsForPizza()
-            .then( resp => resp.json() )
-                .then(resp => console.log(resp))
+        dispatch(actions.loadProducts());
     },[]);
 
     return (
@@ -30,7 +29,7 @@ export const PizzaConstructor = () => {
                     </div>
                     <div className="col-6">
                         <div className="wrapBlock">
-                            <PizzaOption />
+                            <PizzaOption products={storeProducts}/>
                         </div>
                     </div>
                     <div className="col-8">

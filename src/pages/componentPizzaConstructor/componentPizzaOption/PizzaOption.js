@@ -5,7 +5,8 @@ import parmesan from '../../../image/pizza/icon_products/parmesan.svg';
 import dorBlue from '../../../image/pizza/icon_products/dor-blue.svg';
 import kingChesee from '../../../image/pizza/icon_products/king-chesee.svg';
 
-export const PizzaOption = () => {
+export const PizzaOption = ({products}) => {
+    console.log(products);
     return (
         <div className="productsWrap">
             <ul>

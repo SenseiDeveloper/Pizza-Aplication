@@ -1,0 +1,7 @@
+const INIT_PRODUCTS = 'INIT_PRODUCTS';
+const LOAD_PRODUCTS = 'LOAD_PRODUCTS';
+
+export default {
+    INIT_PRODUCTS,
+    LOAD_PRODUCTS
+}
