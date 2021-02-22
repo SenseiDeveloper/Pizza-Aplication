@@ -10,6 +10,7 @@ import actions from '../../redux/actions/index';
 export const PizzaConstructor = () => {
     const dispatch = useDispatch();
     const storeProducts = useSelector( state => state.products);
+    const storeSelectProducts = useSelector(state => state.pizza);
 
     useEffect(() => {
         dispatch(actions.loadProducts());
@@ -23,23 +24,19 @@ export const PizzaConstructor = () => {
                         <h3>Конструктор піци</h3>
                     </div>
                     <div className="col-6">
-                        <div className="pizzaImage">
-                            <img src={pizza} alt="pizza"/>
-                        </div>
-                    </div>
-                    <div className="col-6">
                         <div className="wrapBlock">
                             <PizzaOption products={storeProducts}/>
                         </div>
-                    </div>
-                    <div className="col-8">
-                        <div className="wrapBlock">
-                            <PizzaOrder />
-                        </div>
-                    </div>
-                    <div className="col-4">
                         <div className="wrapBlock">
                             <PizzaOrderInvoice />
+                        </div>
+                    </div>
+                    <div className="col-6">
+                        <div className="pizzaImage">
+                            <img src={pizza} alt="pizza"/>
+                        </div>
+                        <div className="wrapBlock">
+                            <PizzaOrder products={storeSelectProducts}/>
                         </div>
                     </div>
                 </div>

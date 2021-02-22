@@ -9,13 +9,13 @@ const PRODUCTS = {
         {
             id: 1,
             name: 'Томатна основа',
-            icon: 'images/icon_products/basis-cream.svg',
+            icon: 'images/icon_products/basis-tomate.svg',
             image: ''
         },
         {
             id: 2,
             name: 'Вершкова основа',
-            icon: 'images/icon_products/basis-tomate.svg',
+            icon: 'images/icon_products/basis-cream.svg',
             image: ''
         }
     ],

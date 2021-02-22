@@ -9,8 +9,9 @@ export const PizzaOption = ({products}) => {
     const handleProduct = (product) => {
         if(product.hasOwnProperty('count')){
             dispatch(action.setProducts(product));
+        }else {
+            dispatch(action.setBasis(product));
         }
-        dispatch(action.setBasis(product));
     };
 
     return (
