@@ -9,4 +9,5 @@ export const store = createStore(
     reducer,
     applyMiddleware(sagaMiddleware)
 );
+store.subscribe(() => console.info(store.getState()));
 sagaMiddleware.run(watchInitProducts);

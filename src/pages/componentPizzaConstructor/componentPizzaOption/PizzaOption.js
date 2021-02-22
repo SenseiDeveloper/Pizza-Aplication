@@ -1,39 +1,51 @@
 import React from 'react';
+import {useDispatch} from "react-redux";
 import './PizzaOption.scss';
-import bekon from '../../../image/pizza/icon_products/bekon.svg';
-import parmesan from '../../../image/pizza/icon_products/parmesan.svg';
-import dorBlue from '../../../image/pizza/icon_products/dor-blue.svg';
-import kingChesee from '../../../image/pizza/icon_products/king-chesee.svg';
+import action from '../../../redux/actions/index';
 
 export const PizzaOption = ({products}) => {
-    console.log(products);
+    const dispatch = useDispatch();
+
+    const handleProduct = (product) => {
+        if(product.hasOwnProperty('count')){
+            dispatch(action.setProducts(product));
+        }
+        dispatch(action.setBasis(product));
+    };
+
     return (
         <div className="productsWrap">
+            <p>Основа</p>
             <ul>
-                <li className="product active">
-                    <div className="icon">
-                        <img src={bekon} alt="bekon"/>
-                    </div>
-                    <p>Бекон</p>
-                </li>
-                <li className="product">
-                    <div className="icon">
-                        <img src={parmesan} alt="Пармезан"/>
-                    </div>
-                    <p>Пармезан</p>
-                </li>
-                <li className="product active">
-                    <div className="icon">
-                        <img src={dorBlue} alt="Пармезан"/>
-                    </div>
-                    <p>Дор - блю</p>
-                </li>
-                <li className="product">
-                    <div className="icon">
-                        <img src={kingChesee} alt="Пармезан"/>
-                    </div>
-                    <p>Королівський</p>
-                </li>
+                {products.basis && products.basis.map( prod =>
+                    <li key={prod.name} className="product" onClick={() => handleProduct(prod)}>
+                        <img src={process.env.PUBLIC_URL + prod.icon} alt={prod.name}/>
+                        {prod.name}
+                    </li>)}
+            </ul>
+            <p>Сири</p>
+            <ul>
+                {products.cheeses && products.cheeses.map( prod =>
+                    <li key={prod.name} className="product" onClick={() => handleProduct(prod)}>
+                        <img src={process.env.PUBLIC_URL + prod.icon} alt={prod.name}/>
+                        {prod.name}
+                    </li>)}
+            </ul>
+            <p>Мясо та морепродукти</p>
+            <ul>
+                {products.meat && products.meat.map( prod =>
+                    <li key={prod.name} className="product" onClick={() => handleProduct(prod)}>
+                        <img src={process.env.PUBLIC_URL + prod.icon} alt={prod.name}/>
+                        {prod.name}
+                    </li>)}
+            </ul>
+            <p>Овочі та фрукти</p>
+            <ul>
+                {products.anyProducts && products.anyProducts.map( prod =>
+                    <li key={prod.name} className="product" onClick={() => handleProduct(prod)}>
+                        <img src={process.env.PUBLIC_URL + prod.icon} alt={prod.name}/>
+                        {prod.name}
+                    </li>)}
             </ul>
         </div>
     )

@@ -13,6 +13,5 @@ export function* workerInitProducts() {
 }
 
 export function* watchInitProducts() {
-    console.log('worker started');
     yield takeEvery(actionsType.LOAD_PRODUCTS, workerInitProducts)
 }
