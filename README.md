@@ -1,6 +1,5 @@
 # Pizza Aplication
 
-##Start project:
 ### `start app`
     `-npm start`
 ### `start server`
@@ -9,3 +8,4 @@
 
 
 - base use scss
+На кпопку мінуса якщо каунт менеш 1 то забирати її

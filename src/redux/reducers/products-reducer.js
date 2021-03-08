@@ -36,29 +36,25 @@ export const pizzaReducer = (state = statePizza, action) => {
             };
 
         case actionTypes.INCREMENT_PRODUCT_COUNT:
-            const newProductsCountInc = state.products.map( p => {
-                if (p.id === action.payload){
-                    p.count ++;
-                    return p;
-                }
-                return p;
-            });
             return {
                 ...state,
-                products: newProductsCountInc
+                products: state.products.map( p => {
+                    if (p.id === action.payload){
+                        p.count ++;
+                    }
+                    return p;
+                })
             };
 
         case actionTypes.DECREMENT_PRODUCT_COUNT:
-            const newProductsCountDec = state.products.map( p => {
-                if (p.id === action.payload && p.count > 1){
-                    p.count --;
-                    return p;
-                }
-                return p;
-            });
             return {
                 ...state,
-                products: newProductsCountDec
+                products: state.products.map( p => {
+                    if (p.id === action.payload && p.count > 1) {
+                        p.count --;
+                    }
+                    return p;
+                })
             };
 
         default: return state

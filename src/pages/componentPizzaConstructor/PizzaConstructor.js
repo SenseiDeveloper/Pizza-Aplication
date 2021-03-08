@@ -1,9 +1,9 @@
 import React, {useEffect} from 'react';
 import '../componentPizzaConstructor/PizzaConstructor.scss';
-import pizza from '../../image/pizza/pizza.svg';
 import {PizzaOption} from '../componentPizzaConstructor/componentPizzaOption/PizzaOption';
 import {PizzaOrder} from '../componentPizzaConstructor/componentPizzaOrder/PizzaOrder';
 import {PizzaOrderInvoice} from '../componentPizzaConstructor/componentPizzaOrderInvoice/PizzaOrderInvoice';
+import {PizzaSvg} from './componentPizzaSvg/PizzaSvg';
 import {useDispatch, useSelector} from "react-redux";
 import actions from '../../redux/actions/index';
 
@@ -33,7 +33,7 @@ export const PizzaConstructor = () => {
                     </div>
                     <div className="col-6">
                         <div className="pizzaImage">
-                            <img src={pizza} alt="pizza"/>
+                            <PizzaSvg pizzaProducts={storeSelectProducts}/>
                         </div>
                         <div className="wrapBlock">
                             <PizzaOrder products={storeSelectProducts}/>

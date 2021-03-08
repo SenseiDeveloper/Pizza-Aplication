@@ -10,13 +10,11 @@ const PRODUCTS = {
             id: 1,
             name: 'Томатна основа',
             icon: 'images/icon_products/basis-tomate.svg',
-            image: ''
         },
         {
             id: 2,
             name: 'Вершкова основа',
             icon: 'images/icon_products/basis-cream.svg',
-            image: ''
         }
     ],
     cheeses: [
@@ -27,7 +25,7 @@ const PRODUCTS = {
             weight: 50,
             price: 29,
             icon: 'images/icon_products/king-cheese.svg',
-            image: ''
+            image: 'images/image_products/king-chesee.svg'
         },
         {
             id: 2,
@@ -36,7 +34,7 @@ const PRODUCTS = {
             weight: 50,
             price: 39,
             icon: 'images/icon_products/dor-blue-cheese.svg',
-            image: ''
+            image: 'images/image_products/dor-blue.svg'
         },
         {
             id: 3,
@@ -45,7 +43,7 @@ const PRODUCTS = {
             weight: 50,
             price: 39,
             icon: 'images/icon_products/parmesan-cheese.svg',
-            image: ''
+            image: 'images/image_products/parmezan.svg'
         }, {
             id: 4,
             count: 1,
@@ -53,7 +51,7 @@ const PRODUCTS = {
             weight: 50,
             price: 20,
             icon: 'images/icon_products/mocarella-cheese.svg',
-            image: ''
+            image: 'images/image_products/mocarella.svg'
         }
         , {
             id: 5,
@@ -62,7 +60,7 @@ const PRODUCTS = {
             weight: 50,
             price: 20,
             icon: 'images/icon_products/feta-cheese.svg',
-            image: ''
+            image: 'images/image_products/feta.svg'
         }
     ],
     meat: [

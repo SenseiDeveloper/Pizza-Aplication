@@ -1,6 +1,7 @@
 import './App.scss';
 import React from 'react';
 import './fonts/roboto/roboto.css';
+import './fonts/gagalin/gagalin.css';
 import {PizzaConstructor} from './pages/componentPizzaConstructor/PizzaConstructor';
 import {Provider} from "react-redux";
 import {store} from "./redux/storeWithMiddleWare";
